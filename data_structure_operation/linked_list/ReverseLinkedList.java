@@ -9,7 +9,6 @@ public class ReverseLinkedList {
             prev_node = head;
             head = next_node;
         }
-
         return prev_node;
     }
 }
