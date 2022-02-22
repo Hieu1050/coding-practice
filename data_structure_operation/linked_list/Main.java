@@ -11,6 +11,7 @@ public class Main {
         n3.next = n4;
         n4.next = n5;
         printLinkedList (n1);
+        printLinkedList(ReverseLinkedList.reverseListNode (n1));
     }
     
     public static void printLinkedList (ListNode node){
