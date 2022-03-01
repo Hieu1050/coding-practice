@@ -11,7 +11,6 @@
 public class NumWays {
     public static void main(String[] args) {
 
-        System.out.println (Solution1(4));
         System.out.println (Solution2(4));
     }
     public static int Solution1 (int N){
@@ -22,24 +21,17 @@ public class NumWays {
             
         }
     }
-    public static int Solution2 (int N){
-        int res  = 0;
-        int max_num_of_2s = N/2;
-        for (int i = 0; i <= max_num_of_2s; i++) {
-            res += factorial(N-i*2 + i) / (factorial(N - i*2) * factorial (i));
+    // DP
+    public static int Solution2 (int N ){
+        int [] dp = new int [N+1];
+        // base case 
+        if (N == 0 || N == 1) {return 1;}
+        dp[0] = 1;
+        dp[1] = 1;
+        // next case
+        for (int i = 2; i<= N; i++) {
+            dp[i] = dp[i-1] + dp[i-2];
         }
-        return res;
-    }
-    static int factorial (int x){
-        int res = 1;
-        if (x == 0 ){
-            return res;
-        }
-        else{
-            for (int i = 2; i <= x; i++) {
-                res *= i;
-            }
-        }
-        return res;
+        return dp[N];
     }
 }
