@@ -9,46 +9,35 @@ public class BinaryStringAddition {
         StringBuffer res = new StringBuffer();
         int pointer = 0;
         int carry = 0;
-        int shorter_len = (b1.length() <= b2.length()) ? b1.length() :b2.length();
-        while (pointer <= shorter_len - 1){
+        int count_ones = 0;
+        String s_long, s_short;
+        if (b1.length() > b2.length()){
+            s_long = b1;
+            s_short = b2;
+        }
+        else {s_long = b2; s_short = b1;}
+
+
+        int longer_len = s_long.length();
+        while (pointer <= longer_len - 1){
             // do calculation   
-            // if carry == 0
-            if (carry == 0 ){
-                if (b1.charAt(pointer) != b2.charAt(pointer)){
-                    res.append('1');
-                }
-                else {
-                    if (b1.charAt(pointer) == '1'){
-                        res.append('0');
-                        carry = 1;
-                    }
-                    else {
-                        res.append('0')  ;
-                    }
-                                         
-                }
-                }
-            else {
-                if (b1.charAt(pointer) != b2.charAt(pointer)){
-                    res.append('0');
-                }
-                else {
-                    if (b1.charAt(pointer)== 1){
-                        res.append('1');
-                    }
-                    else {
-                        res.append('1');
-                    }
-                }
+            // count the number of 1 bit
+            if (carry == 1){ count_ones ++;}
+            if (s_long.charAt(pointer) == '1'){count_ones ++;}
+            if (pointer <= s_short.length()-1 && b2.charAt(pointer) == '1'){count_ones ++;}
+            // evaluate count_ones
+            if (count_ones % 2 == 0){
+                res.append('0');
+            } else {
+                res.append('0');
             }
+            if (count_ones > 1) {carry =1;}
+            else {carry = 0;}
+
+            count_ones = 0;
             pointer ++;
         }
-        if (b1.length() > b2.length()){
-            res.append( b1.substring(shorter_len, b1.length()));
-        }
-        else if (b1.length() < b2.length()) {
-            res.append( b2.substring(shorter_len, b2.length()));
-        }
+
         if (carry == 1){
             res.append('1');
         }
