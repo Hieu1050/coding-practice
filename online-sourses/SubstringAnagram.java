@@ -7,11 +7,15 @@ import java.util.ArrayList;
 // assumming that the possible chars in within the alphabet
 public class SubstringAnagram {
     public static void main(String[] args) {
-        ArrayList <Integer> res  = Solution("ab", "abxaba"); // [0, 1, 2]
+        ArrayList <Integer> res  = Solution("aaaaaaaaaaaaa", "aaaaaaaaaaa"); // [0, 1, 2]
         System.out.println (res.toString());
     }
-    public static ArrayList <Integer> Solution (String W, String S) {
+    public static ArrayList <Integer> Solution (String S, String W) {
         ArrayList <Integer> res = new ArrayList<Integer>();
+        // constraint test
+        if (W.length() > S.length()){
+            return res;
+        }
         // freq map for W
         int [] fmap_W = new int [26];
         for (int i = 0; i < W.length(); i++) {
@@ -19,24 +23,37 @@ public class SubstringAnagram {
         }
         // init a sliding window sw for S
         char prev_char = S.charAt(0);
+        boolean prev_match = false; 
         // init a freq map for sw
         int [] fmap_S = new int [26];
         for (int i = 0; i < W.length(); i++) {
-            fmap_S [W.charAt(i) - 'a'] ++;
+            fmap_S [S.charAt(i) - 'a'] ++;
         }
         // check matching at first position
         if (compare_fmap(fmap_W, fmap_S)){
             res.add(0);
+            prev_match = true;
         }
         // for each position of the sliding window in S
         for (int i = 1; i <= S.length()-W.length(); i++) {
-            // update freq map for sw
-            fmap_S [prev_char - 'a'] --;
-            fmap_S [S.charAt(i+ W.length()-1) - 'a'] ++;
-            // compare 2 sliding widows
-            if (compare_fmap(fmap_W, fmap_S)) {
-                // append indices if matches
-                res.add (i);
+            // if prev_char is the same as last char of window
+            if (prev_char == S.charAt(i+ W.length()-1) ) {
+                if (prev_match) {
+                    res.add(i);
+                }
+            }
+            // else if new char is different from the previous char
+            else {
+                // update freq map for sw
+                fmap_S [prev_char - 'a'] --;
+                fmap_S [S.charAt(i+ W.length()-1) - 'a'] ++;
+                // compare 2 sliding widows
+                if (compare_fmap(fmap_W, fmap_S)) {
+                    // append indices if matches
+                    prev_match = true;
+                    res.add (i);
+                }
+                else {prev_match = false;}
             }
             // update prev_char
             prev_char = S.charAt(i); // ERROR HERE
@@ -50,7 +67,5 @@ public class SubstringAnagram {
             }
         }
         return true;
-        
     }
-    
 }
