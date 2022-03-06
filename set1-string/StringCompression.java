@@ -1,6 +1,7 @@
 public class StringCompression {
     public static void main(String[] args) {
-        System.out.println (Solution("abcd"));
+        System.out.println ("abcd:\t" + Solution("abcd"));
+        System.out.println ("abbcccdddd:\t" + Solution("abbcccdddd"));
     }
     static String Solution (String s){
         if (s.length()== 0) {return s;}
