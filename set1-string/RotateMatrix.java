@@ -18,6 +18,10 @@ public class RotateMatrix {
         printMatrix(m1, 5);
 
     }
+    static void rotateMatrix (int [][] matrix){
+        transposeMatrix(matrix);
+        rotateMatrix(matrix);
+    }
     static void transposeMatrix (int [][]matrix){
         int N = matrix.length;
         for (int i = 0; i < N; i++) { // height
