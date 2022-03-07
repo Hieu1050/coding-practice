@@ -1,2 +1,1 @@
-# cracking-coding-interview
 
