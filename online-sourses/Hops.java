@@ -15,34 +15,25 @@ public class Hops {
         int [] hops =  {0};
         System.out.println (Solution(hops));
     }
-    public static boolean Solution (int []hops ){
-        int max_i = 0; // the furthest possible index
-        int max_0 = 0; // the furthest 0 index
-        
-        int i = 0;
-        while (i <= hops.length-1) {
-            // if hops[i] != 0: evaluate max_i
-            if (hops[i] != 0){
-                if (i + hops[i]  > max_i) {
-                    max_i = i + hops[i];
+    public static boolean Solution (int [] hops){
+        // base case [0]
+        // if i reaches the end of list: return true
+        int furthest_i = 0;
+        int last_i = hops.length -1;
+        for (int i = 0; i < hops.length; i++) {
+            // update furthest_i;
+            if (hops[i] != 0 ){
+                furthest_i = (furthest_i > (i+ hops[i])) ? furthest_i : (i+ hops[i]);
+                if (furthest_i >= last_i){
+                    return true;
                 }
-
-                i ++;
             }
-            // if hops[i] == 0: find the furthest position of 0
             else {
-                max_0 = i;
-                i ++ ;
-
+                if (furthest_i <= i && i!= last_i) {
+                    return false;
+                }
             }
-            // evaluate if can jump pass max_0: pass
-            if (max_i >= hops.length -1) {
-                return true;
-            }
-            else if (!(max_i > max_0)) {
-                return false;
-            }               
         }
         return true;
-    }
+    }  
 }
