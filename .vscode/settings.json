@@ -2,8 +2,11 @@
     "java.project.sourcePaths": [
         "data_structure_operation",
         "data_structure_operation/linked_list",
-        "online-sourses",
+        "review_folder",
         "set1-string",
-        "set2-linked-list"
+        "set2-linked-list",
+        "1-easy-online",
+        "2-medium-online",
+        "3-hard-online"
     ]
 }

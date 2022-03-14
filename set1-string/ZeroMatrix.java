@@ -18,7 +18,6 @@ public class ZeroMatrix {
         printMatrix(m);
         System.out.println ();
         Solution(m);
-
         printMatrix(m);
     }
     public static void Solution (int[][] m){
@@ -61,7 +60,7 @@ public class ZeroMatrix {
                 }
             }
         }
-        //5- fullify the axis
+        //5- nullify the axis
         if (zero_in_x){
             for (int ix = 0; ix < m[0].length; ix++) {
                 m[0][ix] = 0;
@@ -72,9 +71,7 @@ public class ZeroMatrix {
                 m[iy][0] = 0;
             }
         }
-        
     }
-
     static int [][] generageMatrix (int M, int N){
         int [][] res = new int [M][N];
         Random r = new Random();

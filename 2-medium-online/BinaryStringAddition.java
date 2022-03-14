@@ -1,5 +1,5 @@
 // source https://www.youtube.com/watch?v=QtEtcXPqRPk
-
+// also: https://www.geeksforgeeks.org/program-to-add-two-binary-strings/
 public class BinaryStringAddition {
     public static void main(String[] args) {
         System.out.println (Solution ("111", "1"));

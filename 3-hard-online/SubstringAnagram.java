@@ -1,10 +1,10 @@
-import java.util.ArrayList;
 // daily coding problem 111: https://www.dailycodingproblem.com/solution/111?token=14e37efc0a8f385f870615113a9bd39fab796c1bb1a923d7da29b2b8c443edb7a29b4ef2
 // This problem was asked by Google.
 // Given a word W and a string S, find all starting indices in S which are anagrams of W.
 // For example, given that W is "ab", and S is "abxaba", return 0, 3, and 4.
 
 // assumming that the possible chars in within the alphabet
+import java.util.ArrayList;
 public class SubstringAnagram {
     public static void main(String[] args) {
         ArrayList <Integer> res  = Solution("aaaaaaaaaaaaa", "aaaaaaaaaaa"); // [0, 1, 2]

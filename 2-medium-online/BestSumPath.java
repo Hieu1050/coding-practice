@@ -1,3 +1,4 @@
+// DCP 122
 // This question was asked by Zillow.
 
 // You are given a 2-d matrix where each cell represents number of coins in that cell. Assuming we start at matrix[0][0], and can only move right or down, find the maximum number of coins you can collect by the bottom right corner.
@@ -26,7 +27,6 @@ public class BestSumPath {
         for (int xi = 1; xi < w; xi++) {
             dp[0][xi] = matrix[0][xi] + dp[0][xi-1];
         }
-
         // 2- while running through matrix 
         for (int yi = 1; yi < h; yi++) {
             for (int xi = 1; xi < w; xi++) {
