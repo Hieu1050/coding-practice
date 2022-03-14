@@ -1,6 +1,7 @@
 - 2022-03-14: 
 
-    BestSumPath: using dynamic programming
+    Medium- BestSumPath: using dynamic programming
+    Easy- TwoSum: using hashmap
 - 2022-03-07:
     
     **Rotating a 2d square matrix:** Key idea: Flipping a matrix (x, y or x = y axes) is easier than rotating it. Rotating a matrix by 90 degree can be performed with 2 flipping instead of straightfoward method.
