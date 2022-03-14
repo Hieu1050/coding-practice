@@ -1,0 +1,2 @@
+- 2022-03-14: Hop.java
+  - remeber the basecase: what happend if the array is [0]
