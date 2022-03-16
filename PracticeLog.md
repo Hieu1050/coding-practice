@@ -1,4 +1,5 @@
 - 2022-03-16:
+    - Easy: [WaterBottles](https://leetcode.com/problems/water-bottles/)
     - Easy: [BusStopDistance](https://leetcode.com/problems/distance-between-bus-stops/)
     - Medium: [MinDifference](https://leetcode.com/problems/minimum-difference-between-largest-and-smallest-value-in-three-moves/
     )
