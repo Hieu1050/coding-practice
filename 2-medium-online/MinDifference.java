@@ -20,13 +20,3 @@ public class MinDifference {
         return res;
     }
 }
-
-
-
-
-
-
-
-
-
-
