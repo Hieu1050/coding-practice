@@ -1,25 +1,16 @@
 public class Node {
     Node next = null;
-    int data; 
-    public Node (int data){
-        this.data = data;
+    int val; 
+    public Node (int val){
+        this.val = val;
     }
-
-    public void printList (){
-        Node n = this;
-        while (n != null){
-            System.out.printf("%d -> ", n.data);
-            n = n.next;
-        }
-        System.out.println ("null");
-    }
-
-    public void appendNode (int data){
-        Node end = new Node(data);
+    public void appendTail (int val){
+        Node end = new Node(val);
         Node n = this;
         while (n.next != null){
             n = n.next;
         }
         n.next = end;
     }
+
 }
