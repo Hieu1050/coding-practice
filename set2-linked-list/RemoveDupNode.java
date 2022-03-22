@@ -11,7 +11,6 @@ public class RemoveDupNode {
     public static void removeDupNode(Node node){
         Node head = node; Node tail;
         while (head != null){
-            System.out.println ("current:" + head.val);
             tail = head;
             while (tail.next != null){
                 if (tail.next.val == head.val){
