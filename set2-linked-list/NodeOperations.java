@@ -1,4 +1,14 @@
-public class Operations {
+import java.util.Random;
+
+public class NodeOperations {
+    public Node generateNode (int range, int len){
+        Random rand_int = new Random();
+        Node res = new Node(0);
+        for (int i = 0; i < len; i++) {
+            res.appendTail(rand_int.nextInt(range));
+        }
+        return res;
+    }
     public void printList (Node n){
         while (n != null){
             System.out.printf("%d -> ", n.val);

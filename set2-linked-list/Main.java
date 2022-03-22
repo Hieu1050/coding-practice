@@ -1,14 +1,15 @@
 public class Main {
-    public static void main(String[] args) {
-        Node h = new Node (1);
-        for (int i = 2; i < 10; i++) {
-            h.appendTail(i);
+    Node next = null;
+    int val; 
+    public Node (int val){
+        this.val = val;
+    }
+    public void appendTail (int val){
+        Node end = new Node(val);
+        Node n = this;
+        while (n.next != null){
+            n = n.next;
         }
-        Operations operations = new Operations();
-        operations.printList(h);
-        h = operations.deleteNote(h, 4);
-        operations.printList(h);
-        h = operations.deleteNote(h, 1);
-        operations.printList(h);
+        n.next = end;
     }
 }
