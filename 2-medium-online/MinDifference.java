@@ -10,12 +10,13 @@ public class MinDifference {
     public static void main(String[] args) {
         
     }
-    public static int Solution (int[] nums){
-        int n = nums.length, res = Integer.MAX_VALUE;
-        if (n < 5) return 0;
+    public int minDifference(int[] nums) {
+        if (nums.length <= 4) return 0;
+        int res = Integer.MAX_VALUE; 
         Arrays.sort(nums);
-        for (int i = 0; i < 4; ++i) {
-            res = Math.min(res, nums[n - 4 + i] - nums[i]);
+        // i = number of min numbers it will delete / modify
+        for (int i = 0; i <= 3; i++) {
+            res = Math.min(res, nums[nums.length-1 - (3-i)] - nums[i]);
         }
         return res;
     }
