@@ -1,4 +1,14 @@
+- 2022-03-19:
+    - 
+
+- 2022-03-28:
+    - Medium: [Spiral Matrix 2](https://leetcode.com/problems/spiral-matrix-ii/)
+- 2022-03-17:
+    - Easy: [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/submissions/)
+    - Easy: [Sum of Left Leaves](https://leetcode.com/problems/sum-of-left-leaves/)
+    - Easy: [Univalued Binary Tree](https://leetcode.com/problems/univalued-binary-tree/)
 - 2022-03-16:
+    - Easy: [Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/)
     - Easy: [WaterBottles](https://leetcode.com/problems/water-bottles/)
     - Easy: [BusStopDistance](https://leetcode.com/problems/distance-between-bus-stops/)
     - Medium: [MinDifference](https://leetcode.com/problems/minimum-difference-between-largest-and-smallest-value-in-three-moves/

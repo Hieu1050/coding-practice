@@ -1,3 +1,5 @@
+package binary_tree;
+
 public class TreeNode {
     int val;
     TreeNode left;
