@@ -1,13 +1,22 @@
 import java.util.Random;
 
 public class NodeOperations {
-    public Node generateNode (int range, int len){
+    public Node generateRandomLlist (int range, int len){
         Random rand_int = new Random();
         Node res = new Node(rand_int.nextInt(range));
         for (int i = 0; i < len-1; i++) {
             res.appendTail(rand_int.nextInt(range));
         }
         return res;
+    }
+    public Node generateFromArray (int [] lst){
+        Node null_head = new Node();
+        Node curr_node = null_head;
+        for (int i : lst) {
+            curr_node.next = new Node (i);
+            curr_node = curr_node.next;
+        }
+        return null_head.next;
     }
     public void printList (Node n){
         Node tmp = n;

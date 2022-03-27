@@ -1,7 +1,7 @@
-public class Partition {
+public class PartitionUnstable {
     public static void main(String[] args) {
         NodeOperations o = new NodeOperations();
-        Node n1 = o.generateNode(10, 10);
+        Node n1 = o.generateRandomLlist(10, 10);
         o.printList(n1);
         o.printList(partition(n1, 5));
     }

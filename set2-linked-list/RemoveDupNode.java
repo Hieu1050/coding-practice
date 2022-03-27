@@ -3,7 +3,7 @@
 public class RemoveDupNode {
     public static void main(String[] args) {
         NodeOperations nodeOperations = new NodeOperations();
-        Node n1 = nodeOperations.generateNode(5, 10);
+        Node n1 = nodeOperations.generateRandomLlist(5, 10);
         nodeOperations.printList(n1);
         removeDupNode (n1);
         nodeOperations.printList(n1);
