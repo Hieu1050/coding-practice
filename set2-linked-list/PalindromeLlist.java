@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Stack;
 
 public class PalindromeLlist {
@@ -32,12 +31,10 @@ public class PalindromeLlist {
         if (!is_even_length){
             stack_first_half.pop();
         } 
+        // Important: moving p1 to the first node of second half
         p1 = p1.next;
-        // 3 -compare 2nd half with first half
+        // 3 -compare 2nd half with first half 
         while (!stack_first_half.isEmpty()){
-            System.out.println ("stack val:" + stack_first_half.peek().val);
-            System.out.println ("node val: " + p1.val);
-            if (p1.next != null) System.out.println (p1.next.val);
             if (p1.val != stack_first_half.pop().val) return false;
             p1 = p1.next;
         }   

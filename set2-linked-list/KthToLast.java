@@ -3,7 +3,7 @@
 public class KthToLast {
     public static void main(String[] args) {
         NodeOperations o = new NodeOperations();
-        Node n1 = o.generateNode(15, 7);
+        Node n1 = o.generateRandomLlist(15, 7);
         o.printList(n1);
         Node n_x = kthToLastNode(n1, 1);
         System.out.println (n_x.val);
